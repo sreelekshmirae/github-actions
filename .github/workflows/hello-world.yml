@@ -1,6 +1,16 @@
 name: hello-world
 
-on: push
+on: 
+  workflow_dispatch:
+    inputs:
+      apply_for_prod:
+        type: boolean
+        description: "Tag for ptod/nonprod"
+        default: false
+      environment:
+        type: boolean
+        description: "Env"
+        required: true
 
 jobs:
   hello-world-job:
