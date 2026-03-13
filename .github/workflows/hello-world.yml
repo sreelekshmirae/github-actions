@@ -8,8 +8,12 @@ on:
         description: "Tag for ptod/nonprod"
         default: false
       environment:
-        type: boolean
+        type: string
         description: "Env"
+        required: true
+      server_name: 
+        type: string
+        description: "Server name"
         required: true
 
 jobs:
