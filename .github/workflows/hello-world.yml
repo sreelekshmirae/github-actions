@@ -3,18 +3,10 @@ name: hello-world
 on: 
   workflow_dispatch:
     inputs:
-      apply_for_prod:
-        type: boolean
-        description: "Tag for ptod/nonprod"
-        default: false
-      environment:
+      name:
         type: string
-        description: "Env"
-        required: true
-      server_name: 
-        type: string
-        description: "Server name"
-        required: true
+        description: "write something"
+        required: false
 
 jobs:
   hello-world-job:
@@ -24,4 +16,7 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v4
-      - run: echo "$(cat hello_world.txt)"
+      - name: make script executable
+        run: chmod +x script.sh
+      - name: run script
+        run: ./script.sh
